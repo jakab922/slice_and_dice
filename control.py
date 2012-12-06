@@ -35,16 +35,16 @@ class MoveViewCommand(WindowCommand):
 
 		if direction in ['down', 'up']:
 			stuff = layout['cols']
-			crange = [stuff[0], stuff[2]]
+			crange = [stuff[ccell[0]], stuff[ccell[2]]]
 		else:
 			stuff = layout['rows']
-			crange = [stuff[1], stuff[3]]
+			crange = [stuff[ccell[1]], stuff[ccell[3]]]
 
-		return self.get_best_intersection(crange, icells, stuff)
+		return self.get_best_intersection(cgroup, crange, icells, stuff)
 
-	def get_best_intersection(self, current, others, distribution):
+	def get_best_intersection(self, cindex, current, others, distribution):
 		best_value = 0.0
-		best_index = current
+		best_index = cindex
 		clow, chigh = current
 
 		for low, high, index in others:
