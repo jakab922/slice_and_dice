@@ -1,34 +1,82 @@
 [
     {
-        "keys": ["super+shift+left"], "command": "move_view",
+        "keys": ["super+alt+left"], "command": "move_focus",
         "args": {"direction": "left"}
     },
     {
-        "keys": ["super+shift+up"], "command": "move_view",
+        "keys": ["super+alt+up"], "command": "move_focus",
         "args": {"direction": "up"}
     },
     {
-        "keys": ["super+shift+right"], "command": "move_view",
+        "keys": ["super+alt+right"], "command": "move_focus",
         "args": {"direction": "right"}
     },
     {
-        "keys": ["super+shift+down"], "command": "move_view",
+        "keys": ["super+alt+down"], "command": "move_focus",
         "args": {"direction": "down"}
     },
     {
-        "keys": ["super+ctrl+left"], "command": "create_view",
+        "keys": ["super+alt+shift+left"], "command": "move_view",
         "args": {"direction": "left"}
     },
     {
-        "keys": ["super+ctrl+up"], "command": "create_view",
+        "keys": ["super+alt+shift+up"], "command": "move_view",
         "args": {"direction": "up"}
     },
     {
-        "keys": ["super+ctrl+right"], "command": "create_view",
+        "keys": ["super+alt+shift+right"], "command": "move_view",
         "args": {"direction": "right"}
     },
     {
-        "keys": ["super+ctrl+down"], "command": "create_view",
+        "keys": ["super+alt+shift+down"], "command": "move_view",
         "args": {"direction": "down"}
+    },
+    {
+        "keys": ["super+ctrl+alt+shift+left"], "command": "create_view",
+        "args": {"direction": "left"}
+    },
+    {
+        "keys": ["super+ctrl+alt+shift+up"], "command": "create_view",
+        "args": {"direction": "up"}
+    },
+    {
+        "keys": ["super+ctrl+alt+shift+right"], "command": "create_view",
+        "args": {"direction": "right"}
+    },
+    {
+        "keys": ["super+ctrl+alt+shift+down"], "command": "create_view",
+        "args": {"direction": "down"}
+    },
+    {
+        "keys": ["super+ctrl+left"], "command": "resize_view",
+        "args": {"direction": "left"}
+    },
+    {
+        "keys": ["super+ctrl+up"], "command": "resize_view",
+        "args": {"direction": "up"}
+    },
+    {
+        "keys": ["super+ctrl+right"], "command": "resize_view",
+        "args": {"direction": "right"}
+    },
+    {
+        "keys": ["super+ctrl+down"], "command": "resize_view",
+        "args": {"direction": "down"}
+    },
+    {
+        "keys": ["super+ctrl+shift+left"], "command": "resize_view",
+        "args": {"direction": "left", "rtype": "shrink"}
+    },
+    {
+        "keys": ["super+ctrl+shift+up"], "command": "resize_view",
+        "args": {"direction": "up", "rtype": "shrink"}
+    },
+    {
+        "keys": ["super+ctrl+shift+right"], "command": "resize_view",
+        "args": {"direction": "right", "rtype": "shrink"}
+    },
+    {
+        "keys": ["super+ctrl+shift+down"], "command": "resize_view",
+        "args": {"direction": "down", "rtype": "shrink"}
     }
 ]

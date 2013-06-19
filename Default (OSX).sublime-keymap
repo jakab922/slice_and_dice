@@ -30,5 +30,37 @@
     {
         "keys": ["super+ctrl+down"], "command": "create_view",
         "args": {"direction": "down"}
+    },
+    {
+        "keys": ["super+alt+left"], "command": "move_focus",
+        "args": {"direction": "left"}
+    },
+    {
+        "keys": ["super+alt+up"], "command": "move_focus",
+        "args": {"direction": "up"}
+    },
+    {
+        "keys": ["super+alt+right"], "command": "move_focus",
+        "args": {"direction": "right"}
+    },
+    {
+        "keys": ["super+alt+down"], "command": "move_focus",
+        "args": {"direction": "down"}
+    },
+    {
+        "keys": ["super+ctrl+shift+left"], "command": "resize_view",
+        "args": {"direction": "left"}
+    },
+    {
+        "keys": ["super+ctrl+shift+up"], "command": "resize_view",
+        "args": {"direction": "up"}
+    },
+    {
+        "keys": ["super+ctrl+shift+right"], "command": "resize_view",
+        "args": {"direction": "right"}
+    },
+    {
+        "keys": ["super+ctrl+shift+down"], "command": "resize_view",
+        "args": {"direction": "down"}
     }
 ]
