@@ -120,7 +120,6 @@ class MoveViewCommand(BaseViewCommand):
             self.window.focus_view(self.current_view)
 
 
-
 class CreateViewCommand(BaseViewCommand):
     def run(self, direction):
         super(CreateViewCommand, self).run(direction)

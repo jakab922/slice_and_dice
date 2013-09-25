@@ -1,11 +1,11 @@
 import sublime
 
-LEFT, TOP, RIGHT, BOTTOM = (0, 1, 2, 3)
+LEFT, UP, RIGHT, DOWN = (0, 1, 2, 3)
 direction_translator = {
     'left': LEFT,
-    'up': TOP,
+    'up': UP,
     'right': RIGHT,
-    'down': BOTTOM
+    'down': DOWN
 }
 HORIZONTAL, VERTICAL = 0, 1
 
@@ -14,11 +14,11 @@ class InvalidOperation(Exception):
     pass
 
 
-class Cell(object):
-    def __init__(self, cell):
-        for direction in ("left", "up", "right", "down"):
-            ndirection = direction_translator[direction]
-            setattr(self, direction, cell[ndirection])
+# class Cell(object):
+#     def __init__(self, cell):
+#         for direction in ("left", "up", "right", "down"):
+#             ndirection = direction_translator[direction]
+#             setattr(self, direction, cell[ndirection])
 
 
 class Window(object):
@@ -85,5 +85,39 @@ class Window(object):
 
         return cells, rows, cols
 
-    def _get_best_group(self, cell_index):
-        pass
+    def _get_best_group(self, cell_index, direction):
+        layout = self._layout
+        current_cell = layout[cell_index]
+
+        if direction == LEFT:
+            other_from, other_to, other_side, this_side = (UP, DOWN,
+                                                           RIGHT, LEFT)
+        elif direction == UP:
+            other_from, other_to, other_side, this_side = (LEFT, RIGHT,
+                                                           DOWN, UP)
+        elif direction == RIGHT:
+            other_from, other_to, other_side, this_side = (UP, DOWN,
+                                                           LEFT, RIGHT)
+        elif direction == DOWN:
+            other_from, other_to, other_side, this_side = (LEFT, RIGHT,
+                                                           UP, DOWN)
+
+        icells = ((cell[other_from], cell[other_to], i)
+                  for i, cell in enumerate(cells)
+                  if cell[other_side] == current_cell[this_side]
+                  and cell != current_cell)
+
+        if direction in [UP, DOWN]:
+            distribution = self.layout['cols']
+            current_range = (current_cell[LEFT], current_cell[RIGHT])
+        else:
+            distribution = self.layout['rows']
+            current_range = (current_cell[TOP], current_cell[BOTTOM])
+
+        return self.get_best_intersection(current_range, icells, distribution)
+
+
+
+    def _get_best_intersection(self, current_cell_index, current_range,
+                               icells, distribution):
+
