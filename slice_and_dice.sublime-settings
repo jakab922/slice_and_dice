@@ -1,4 +1,5 @@
 {
     "vertical_resize": 0.02,
-    "horizontal_resize": 0.02
+    "horizontal_resize": 0.02,
+    "type": "create"
 }
